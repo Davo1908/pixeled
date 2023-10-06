@@ -619,7 +619,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Pixelated Odyssey
 
-    A  Journey In The Forest.'
+    The Ascent'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dec6fbf508571b64dbbd506682b0887b, type: 2}
   m_sharedMaterial: {fileID: -2960758953854776091, guid: dec6fbf508571b64dbbd506682b0887b, type: 2}
