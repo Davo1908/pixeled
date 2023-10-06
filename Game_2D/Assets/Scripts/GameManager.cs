@@ -10,25 +10,28 @@ using System.IO;
 public class GameManager : MonoBehaviour
 {
     private bool running;
-
     public static GameManager Instance;
+    private GameData gameData;
+
+    [Header ("UI Player")]
     public GameObject livesUI;
     public PlayerController player;
     public TMP_Text textCoin;
     public int coin;
+
+    [Header ("Manager Level")]
     public TMP_Text saveGameText;
-
-    private GameData gameData;
-
     public bool advancingLevel;
-    public GameObject panelPause;
-    public GameObject panelGameOver;
-    public GameObject panelLoad;
-
     public int currentLevel;
     public List<Transform> positionsAdvanced = new List<Transform>();
     public List<Transform> positionsBack = new List<Transform>();
     public GameObject transitionPanel;
+
+    [Header ("Panels")]
+    public GameObject panelPause;
+    public GameObject panelGameOver;
+    public GameObject panelLoad;
+    public GameObject panelSelect;
 
     private void Awake()
     {
@@ -154,12 +157,14 @@ public class GameManager : MonoBehaviour
         player.UpdateLivesUI(discountedLives);
     }*/
 
+    //Contador de monedas
     public void UpdateCoinCounter()
     {
         coin++;
         textCoin.text = coin.ToString();
     }
 
+    //Pausa el juego
     public void Pause_Game()
     {
         Time.timeScale = 0;
@@ -178,7 +183,7 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("Main_Menu");
     }
     
-    public void Load_Selector()
+    /*public void Load_Selector()
     {
         Time.timeScale = 1;
         SceneManager.LoadScene("Level_Select");
@@ -187,7 +192,7 @@ public class GameManager : MonoBehaviour
     public void Load_Scene(string scene_To_Load)
     {
         SceneManager.LoadScene(scene_To_Load);
-    }
+    }*/
 
     public void GameOver()
     {
